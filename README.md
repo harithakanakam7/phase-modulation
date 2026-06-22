@@ -37,33 +37,35 @@ Plot the Signals:
 o Use Scilab to plot the message signal, carrier signal, and phase-modulated signal.
 
 **PROGRAM:**
-
-
 ```
-Am=10.83;
-fm=812;
-fs=81200;
+Am=11.8;
+Ac=23.6;
+fm=1607;
+fc=16070;
+fs=160700;
+b=2.5;
 t=0:1/fs:2/fm;
-Ac=17.32;
-fc=8120;
-B=2.63;
-em=Am*cos(2*3.14*fm*t);
+em = Am*cos(2*3.14*fm*t);
 subplot(4,1,1);
 plot(t,em);
-ec=Ac*cos(2*3.14*fc*t);
+ec = Ac*cos(2*3.14*fc*t);
 subplot(4,1,2);
 plot(t,ec);
-efm=Ac*cos((2*3.14*fc*t)+B*sin(2*3.14*fm*t)); 
+eFM = Ac*cos((2*3.14*fc*t) + (b*sin(2*3.14*fm*t)));
 subplot(4,1,3);
-plot(t,efm);
-epm=Ac*cos((2*3.14*fc*t)+B*cos(2*3.14*fm*t));
+plot(t,eFM);
+ePM=Ac*cos((2*3.14*fc*t) + (b*cos(2*3.14*fm*t)));
 subplot(4,1,4);
-plot(t,epm);
+plot(t,ePM);
 ```
 
 **OUTPUT:**
+<img width="1918" height="1198" alt="image" src="https://github.com/user-attachments/assets/27e6444c-b7f4-47b3-831d-8b804f2e9081" />
+
 
 **SIGNED OUTPUT**:
+<img width="1292" height="738" alt="image" src="https://github.com/user-attachments/assets/33b39af4-440e-4b6e-8d9e-d017450d408d" />
+
 
 **RESULT:**
 The message signal, carrier signal, and phase-modulated (PM) signal will be displayed in separate plots. The modulated signal will show phase variations corresponding to the amplitude of the message signal.
